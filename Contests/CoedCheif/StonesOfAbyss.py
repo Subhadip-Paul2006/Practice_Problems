@@ -1,3 +1,4 @@
+# Problem Statement :
 # Stones of the Abyss Alice and Bob are playing a game with a single pile containing  N stones. They play alternating turns, and Alice always makes the first move.
 
 # The rules of the game are as follows :

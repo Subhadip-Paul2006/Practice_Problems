@@ -38,3 +38,4 @@ def canReduce(N: int, arr: list[int]) -> bool:
             return False
     return True
 
+
