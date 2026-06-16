@@ -25,6 +25,27 @@
 # Sample Output 1 :
 # True
 
+
+
 def canWin(a: int, b: int, w: int) -> bool:
     return a + b >= w
+
+
+if __name__ == "__main__":
+    import sys
+
+    data = []
+    try:
+        data = list(map(int, input().strip().split()))
+    except Exception:
+        pass
+
+    if len(data) < 3:
+        data = list(map(int, sys.stdin.read().strip().split()))
+
+    if len(data) >= 3:
+        a, b, w = data[0], data[1], data[2]
+        print(canWin(a, b, w))
+    else:
+        print("Usage: provide three integers a b w, e.g. '15 10 20'")
 
