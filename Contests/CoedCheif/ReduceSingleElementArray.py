@@ -38,4 +38,21 @@ def canReduce(N: int, arr: list[int]) -> bool:
             return False
     return True
 
+if __name__ == "__main__":
+    import sys
 
+    data = []
+    try:
+        data = list(map(int, input().strip().split()))
+    except Exception:
+        pass
+
+    if len(data) < 1:
+        data = list(map(int, sys.stdin.read().strip().split()))
+
+    if len(data) >= 1:
+        N = data[0]
+        arr = data[1:N + 1]
+        print("YES" if canReduce(N, arr) else "NO")
+    else:
+        print("Usage: provide an integer N followed by N integers, e.g. '4 4 1 3 2'")
