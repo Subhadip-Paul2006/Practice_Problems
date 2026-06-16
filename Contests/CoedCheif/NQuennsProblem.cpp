@@ -12,6 +12,66 @@ The output consists of all distinct valid configurations of the chessboard, each
 Constraints : 
 1 ≤ N ≤ 9 */
 
+/* Sample Input : 
+4
+Sample output :
+. . Q .
+Q . . .
+. . . Q
+. Q . .
+
+. Q . .
+. . . Q
+Q . . .
+. . Q . */
+
+
+#pragma endregion
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+vector < vector < string >> solveNQueens(int N) {
+    //write your code here
+    vector < vector < string >> ans;
+    vector < string > board(N, string(N, '.'));
+
+    vector < int > column(N, 0);
+    vector < int > diagram1(2 * N - 1, 0);
+    vector < int > diagram2(2 * N - 1, 0);
+
+    function < void(int) > dfs = [ & ](int row)
+    {
+        if (row == N)
+        {
+            ans.push_back(board);
+            return;
+        }
+        for (int c = 0; c < N; c++)
+        {
+            if (diagram1[row - c + N - 1] || diagram2[row + c])
+            {
+                continue;
+            }
+
+            board[row][c] = 'Q';
+            column[c] = 1;
+            diagram1[row - c + N - 1] = 1;
+            diagram2[row + c] = 1;
+
+            dfs(row + 1);
+
+            board[row][c] = '.';
+            column[c] = 0;
+            diagram1[row - c + N - 1] = 0;
+            diagram2[row + c] = 0;
+        }
+    };
+
+    dfs(0);
+    return ans;
+}
 
 
 
