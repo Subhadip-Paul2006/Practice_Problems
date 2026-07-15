@@ -13,7 +13,6 @@ def moveZeroes(nums):
             temp.append(i)
         elif i == 0:
             flag += 1
-        
     for i in range(flag):
         temp.append(0)
     nums[ : ] = temp
