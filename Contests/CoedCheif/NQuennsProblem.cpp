@@ -73,11 +73,27 @@ vector < vector < string >> solveNQueens(int N) {
     return ans;
 }
 
+void printBoard(const vector < vector < string >> &board) {
+    for (const auto &row: board) {
+        for (const auto &cell: row) {
+            cout << cell << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
 
+int main() {
+    int N;
+    cin >> N;
 
+    vector < vector < string >> solutions = solveNQueens(N);
 
+    for (const auto &solution: solutions) {
+        printBoard(solution);
+    }
 
-
-
+    return 0;
+}
 
 
