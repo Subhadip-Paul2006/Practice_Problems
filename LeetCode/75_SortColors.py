@@ -10,22 +10,28 @@
 # Input: nums = [2,0,1]
 # Output: [0,1,2]
 
-class Solution:
-    def sortColors(self, nums: List[int]) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-        arr0 = []
-        arr1 = []
-        arr2 = []
-        for i in nums:
-            if i == 0:
-                arr0.append(i)
-            elif i == 1:
-                arr1.append(i)
-            elif i == 2:
-                arr2.append(i)
-        nums[ : ] = arr0 + arr1 + arr2
-        return nums
+def sortColors( nums):
+    """
+    Do not return anything, modify nums in-place instead.
+    """
+    arr0 = []
+    arr1 = []
+    arr2 = []
+    for i in nums:
+        if i == 0:
+            arr0.append(i)
+        elif i == 1:
+            arr1.append(i)
+        elif i == 2:
+            arr2.append(i)
+    nums[ : ] = arr0 + arr1 + arr2
+    return nums
 
 
+arr01 = []
+n = int(input("Enter the number of elements in the array: "))
+for i in range(n):
+    arr01.append(int(input()))
+
+
+print(sortColors(arr01))
