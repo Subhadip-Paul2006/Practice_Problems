@@ -11,3 +11,16 @@
 # Input: arr[] = [-7, 1, 5, 2, -4, 3, 0]
 # Output: 3
 
+def point(arr):
+    total = sum(arr)
+    left = 0
+    right = 0
+    for i in range(len(arr)):
+        right = total - left - arr[i]
+        if left == right:
+            return i
+        left += arr[i]
+    return -1
+
+arr = [1, 2, 0, 3]
+print(point(arr))
